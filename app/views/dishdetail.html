@@ -36,19 +36,17 @@
             <ul class="list-unstyled">
                 <li>
                     <blockquote ng-show="commentForm.$valid && !commentForm.$pristine">
-                        <p>{{commentInput.rating}} Stars</p>
-                        <p>{{commentInput.comment}}</p>
-                        <footer>{{commentInput.author}}, {{commentInput.date | date}}</footer>
+                        <p>{{mycomment.rating}} Stars</p>
+                        <p>{{mycomment.comment}}</p>
+                        <footer>{{mycomment.author}}, {{mycomment.date | date}}</footer>
                     </blockquote>
                 </li>
-                <p>Task 3: Here you include the code to show the live preview of the comment</p>
-                <p>The comment should be shown only when the form contains valid information and is not pristine</p>
             </ul>
             <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
                 <div class="form-group" ng-class="{ 'has-error' : commentForm.firstname.$error.required && !commentForm.firstname.$pristine }">
                     <label for="firstname" class="col-sm-2 control-label">Your Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your Name" ng-model="commentInput.author" required>
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your Name" ng-model="mycomment.author" required>
                         <span ng-show="commentForm.firstname.$error.required && !commentForm.firstname.$pristine" class="help-block">Your First name is required.</span>
                     </div>
                 </div>
@@ -58,26 +56,26 @@
                     </div>
                     <div class="col-xs-6 col-sm-10">
                         <label for="guest1" class="radio-inline">
-                            <input type="radio" name="optradio" id="guest1" value="1" ng-model="commentInput.rating">1
+                            <input type="radio" name="optradio" id="guest1" value="1" ng-model="mycomment.rating">1
                         </label>
                         <label for="guest2" class="radio-inline">
-                            <input type="radio" name="optradio" id="guest2" value="2" ng-model="commentInput.rating">2
+                            <input type="radio" name="optradio" id="guest2" value="2" ng-model="mycomment.rating">2
                         </label>
                         <label for="guest3" class="radio-inline">
-                            <input type="radio" name="optradio" id="guest3" value="3" ng-model="commentInput.rating">3
+                            <input type="radio" name="optradio" id="guest3" value="3" ng-model="mycomment.rating">3
                         </label>
                         <label for="guest4" class="radio-inline">
-                            <input type="radio" name="optradio" id="guest4" value="4" ng-model="commentInput.rating">4
+                            <input type="radio" name="optradio" id="guest4" value="4" ng-model="mycomment.rating">4
                         </label>
                         <label for="guest5" class="radio-inline">
-                            <input type="radio" name="optradio" id="guest5" value="5" ng-model="commentInput.rating">5
+                            <input type="radio" name="optradio" id="guest5" value="5" ng-model="mycomment.rating">5
                         </label>
                     </div>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : commentForm.feedback.$error.required && !commentForm.feedback.$pristine }">
                     <label for="comments" class="col-xs-6 col-sm-2 control-label">Your Comments</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" id="feedback" name="feedback" rows="12" ng-model="commentInput.comment" required></textarea>
+                        <textarea class="form-control" id="feedback" name="feedback" rows="12" ng-model="mycomment.comment" required></textarea>
                         <span ng-show="commentForm.feedback.$error.required && !commentForm.feedback.$pristine" class="help-block">Your feedback is required.</span>
                     </div>
                 </div>
